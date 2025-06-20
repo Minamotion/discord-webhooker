@@ -25,6 +25,7 @@ async function getDiscordWebhook(webhookURL) {
 		})
 		.catch(e=>console.error(e))
 	if (error) return
+	if (data === undefined || data === null) return
 	return {
 		avatarUrl: (data.avatar!==null)?`https://cdn.discordapp.com/avatars/${data.id}/${data.avatar}?size=256`:null,
 		name: data.name,
