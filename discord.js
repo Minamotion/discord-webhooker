@@ -6,7 +6,7 @@
  * Sends a discord message through a webhook
  * @param {DiscordMessage} message Message to send
  * @param {string} webhookURL Webhook
- * @returns {Promise<any>}
+ * @returns {Promise<Response>}
  */
 async function sendDiscordMessage(message, webhookURL) {
 	return await fetch(webhookURL, { headers: { "Content-Type": "application/json" }, method: "POST", body: JSON.stringify(message) })
@@ -14,12 +14,16 @@ async function sendDiscordMessage(message, webhookURL) {
 
 /**
  * Gets a discord webhook
+ * 
  * @param {string} webhookURL Webhook
- * @returns {{avatarUrl:string,name:string}|undefined}
+ * @returns {{avatarUrl:string,name:string}|undefined} Useful stuff
  */
 async function getDiscordWebhook(webhookURL) {
 	let error = false
-	let data = await fetch(webhookURL).then(p=>error = p.status !== 200).then(d=>d.json()).catch(e=>console.error(e))
+	let data = await fetch(webhookURL)
+		.then(p=>error = !(p.status === 200))
+		.then(d=>d.json())
+		.catch(e=>console.error(e))
 	if (error) return
 	if (data === undefined) return
 	return {
