@@ -3,7 +3,7 @@
  */
 
 /**
- * Sends a discord message from a webhook
+ * Sends a discord message through a webhook
  * @param {DiscordMessage} message Message to send
  * @param {string} webhookURL Webhook
  * @returns {Promise<any>}
