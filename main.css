@@ -1,3 +1,48 @@
-/*
-    TODO: Make a stylesheet
-*/
+html {
+	background: black;
+	color: white;
+}
+
+* {
+	font-family: "monospace";
+}
+
+img {
+	border-radius: 40px;
+}
+
+.center {
+	text-align: center;
+}
+
+button:hover {
+	cursor: pointer;
+}
+
+button:active {
+	background: gray;
+	color: white;
+}
+
+button, input, textarea {
+	background: white;
+	border: gray solid 3px;
+	border-radius: 6px;
+	padding: 4px;
+	color: black;
+	font-size: 1em;
+	margin-top: 2px;
+	margin-bottom: 2px;
+}
+
+input:empty, textarea:empty {
+	color: black;
+}
+
+button:disabled, input:disabled, textarea:disabled {
+	opacity: 25%;
+}
+
+h1 {
+	color: deeppink;
+}

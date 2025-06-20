@@ -6,7 +6,6 @@
  * Sends a discord message through a webhook
  * @param {DiscordMessage} message Message to send
  * @param {string} webhookURL Webhook
- * @returns {Promise<Response>}
  */
 async function sendDiscordMessage(message, webhookURL) {
 	return await fetch(webhookURL, { headers: { "Content-Type": "application/json" }, method: "POST", body: JSON.stringify(message) })
@@ -14,7 +13,6 @@ async function sendDiscordMessage(message, webhookURL) {
 
 /**
  * Gets a discord webhook
- * 
  * @param {string} webhookURL Webhook
  * @returns {{avatarUrl:string,name:string}|undefined} Useful stuff
  */

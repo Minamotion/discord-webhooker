@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
 	const whAvatar = document.getElementById("wh-avatar")
 	const whName = document.getElementById("wh-name")
 
-
 	sendBTN.addEventListener("click", async () => {
 		sendBTN.disabled = chat.disabled = whAPI.disabled = true
 		await sendDiscordMessage({ content: chat.value, embeds: [] }, whAPI.value)
