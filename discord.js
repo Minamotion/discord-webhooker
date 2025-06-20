@@ -18,9 +18,10 @@ async function sendDiscordMessage(message, webhookURL) {
  * @returns {{avatarUrl:string,name:string}|undefined}
  */
 async function getDiscordWebhook(webhookURL) {
-	let data = await fetch(webhookURL).then(d=>d.json()).catch(e=>console.error(e))
+	let error = false
+	let data = await fetch(webhookURL).then(p=>error = p.status !== 200).then(d=>d.json()).catch(e=>console.error(e))
+	if (error) return
 	if (data === undefined) return
-	if (data.code !== undefined) return
 	return {
 		avatarUrl: (data.avatar!==null)?`https://cdn.discordapp.com/avatars/${data.id}/${data.avatar}?size=256`:null,
 		name: data.name,
