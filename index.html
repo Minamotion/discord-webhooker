@@ -1,0 +1,24 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Webhooker</title>
+		<link rel="stylesheet" href="./main.css">
+		<link rel="icon" href="./avatarless.png">
+		<script src="./discord.js"></script>
+		<script src="./main.js" type="module"></script>
+	</head>
+	<body>
+		<div style="text-align: center;">
+			<h1>Webhooker</h1>
+			<h2>Chat as:</h2>
+			<img width="256" id="wh-avatar" src="./nobody.png">
+			<p><span id="wh-name" style="text-align:center">???</span></p>
+			<input type="url" id="webhook-url" placeholder="https://discord.com/api/webhooks/.../..." style="width: 100%;">
+		</div>
+		<div>
+			<textarea type="text" id="chat" placeholder="Say something!" style="width: 100%; resize: vertical;"></textarea>
+			<button id="send-btn" style="width: 100%;">Send</button>
+		</div>
+	</body>
+</html>
