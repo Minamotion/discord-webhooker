@@ -33,6 +33,11 @@ button, input, textarea {
 	font-size: 1em;
 	margin-top: 2px;
 	margin-bottom: 2px;
+	width: 100%;
+}
+
+textarea {
+	resize: vertical;
 }
 
 input:empty, textarea:empty {
